@@ -13,46 +13,30 @@
         <button class="btn btns">Explore Now</button>
       </div>
     </div>
-
-    <div class="container justify-content-center d-flex mt-5">
-      <div class="row">
-        <div class="col-md">
-          <div class="text-center">
-            <p class="subtitle">Top Trending Books</p>
-            <BookCard :books="books"/> 
-          </div>
-          <div class="text-center">
-            <p class="subtitle">Monthly Release Book</p>
-            <BookCard />
-          </div>
-        </div>
-        <div class="col-2 text-center">
-          <SignUpCard/>
-          <div class="container-fluid p-4" style="width: 260px">
-            <h5>Are you an author or a publisher?</h5>
-            <p>
-              Gain access to a massive audience of book lovers. Goodreads is a
-              great place to promote your books.
-            </p>
-            <div class="d-flex justify-content-evenly">
-              <div>
-                <button class="btn border" style="font-size: 10px">
-                  Advertise
-                </button>
-              </div>
-              <div>
-                <button class="btn border" style="font-size: 10px">
-                  Add program
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+<section >
+  <div>
+    <SearchBar/>
+  </div>
+  <div class="container">
+    <div class="row " >
+      <div class=" border">
+        <div class=" p-3">
+           <p class="subtitle">Top Trending Books</p>
+        <BookSlider :books="books" />
+      </div>
+      <div class="p-3">
+        <p class="subtitle">Monthly Release Book</p>
+        <BookSlider :books="books" />
+        
+      </div>
       </div>
     </div>
-    <BookSlider />
+  </div>
+
+</section>
+    
     <footer>
-      <FooterView/>
+      <FooterView />
     </footer>
   </div>
 </template>
@@ -61,19 +45,21 @@
 import BookList from "../services/BookList";
 import FooterView from "../components/Widget/FooterView.vue";
 import BookCard from "../components/Widget/bookCard.vue";
+import BookSlider from "../components/Widget/bookSlider.vue";
 import SignUpCard from "../components/Widget/signUpCard.vue";
+import SearchBar from "../components/Widget/searchBar.vue";
 
 export default {
   async mounted() {
     this.books = (await BookList.index()).data;
-     console.log(this.books);
+    console.log(this.books);
   },
   data() {
     return {
-            books: null,
-        };
-    },
-    components: { FooterView, BookCard, SignUpCard }
+      books: null,
+    };
+  },
+  components: { FooterView, BookCard, SignUpCard, BookSlider, SignUpCard, SearchBar },
 };
 </script>
 
@@ -133,4 +119,12 @@ header {
 .col {
   padding: 10px;
 }
+/*.signUp{
+  display: flex;
+  flex-direction: row;}
+@media(min-width: 1200px){
+  .signUp{flex-direction : column;
+}
+}*/
+
 </style>
