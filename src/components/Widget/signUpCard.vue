@@ -1,3 +1,12 @@
+<script>
+export default {
+methods:{
+  emailS() {
+    this.$router.push('/register/email')
+  }
+}
+}
+</script>
 <template>
   <div>
     <div class="card d-flex justify-content-center text-center p-4" style="width:260px">
@@ -33,7 +42,7 @@
             Join with Apple
           </button>
         </div>
-        <div><button class="btn " style=" background-color: #ac3b61;">Join with Email</button></div>
+        <div><button @click="emailS()" class="btn " style=" background-color: #ac3b61;">Join with Email</button></div>
       </div>
       <p>
         By creating an account, you agree to the Goodreads Terms of Service and

@@ -8,7 +8,10 @@ export default {
       }
     })
   },
-  post (book) {
+  searches(search){
+    return Api().get(`search/${search}`)
+  },
+  post (book) { 
     return Api().post('books', book)
   },
   show (bookId) {
@@ -17,6 +20,7 @@ export default {
   put (bookId) {
     return Api().put(`books/${bookId}`, bookId)
   }
+
 }
 
 /*

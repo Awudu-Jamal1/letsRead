@@ -1,16 +1,17 @@
 <template>
   <swiper
-    :slidesPerView="3"
+    :slidesPerView="7"
     :spaceBetween="30"
     :freeMode="true"
     :pagination="{
       clickable: true,
     }"
     :modules="modules"
-    class="MySwiper border"
+    class="MySwiper text-center"
   >
-    <swiper-slide class="swiper-slide" v-for="(book, i) in books" :key="i" v>
-      <img
+    <swiper-slide class="swiper-slide" v-for="(book, i) in books" :key="i" >
+      <router-link class="text-decoration-none" :to="{name: 'Book', params: { bookId: book.id }}">
+        <img
         thumbnail
         fluid
         :src="book.img_Url"
@@ -19,6 +20,16 @@
         class="img-thumbnail"
     
       />
+      <div class="name">
+        <p>{{book.title}}</p>
+        <p>{{book.author}}</p>
+      </div>
+      </router-link>
+      <a href="#/book/show/:book.id">
+      
+      </a>
+      
+      
     
     </swiper-slide>
   </swiper>
@@ -53,7 +64,11 @@ export default {
 <style scoped>
 .swiper-slide img{
   height:200px ;
-  margin-bottom:50px;
+
+}
+
+.name p{
+  margin-bottom: none;
 }
 
   @media (max-width: 768px){

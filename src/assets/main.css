@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+:root{
+  --font-color: #4B3869;
+  --subtitle-color: #A45D5D;
+  --back-ground: #FFFf;
+  --text-color:#BB9981;
+}
+
 
 *{
   box-sizing: border-box;
@@ -7,5 +18,25 @@
 }
 #app{
   font-size: 12px;
-  font-family: 'Roboto', sans-serif;
+  
+  
+  /*font-family: 'Roboto Mono', monospace;*/
+  font-family: 'Rubik', sans-serif;
+}
+body{
+  background-color: var(--back-ground);
+}
+
+h1,h2,h3,h4,h5{
+  color: var(--font-color);
+}
+
+p{
+  color: var(--text-color);
+}
+
+.main-container{
+  margin: 0px auto;
+text-align: left;
+width: 970px;
 }

@@ -1,12 +1,13 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView } from "vue-router";
+import Navdesign from "./components/Widget/navdesign.vue";
 </script>
 
 <template>
   <div>
-    <RouterView class="border"/>
+    <div><Navdesign /></div>
+    <RouterView />
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
